@@ -184,11 +184,22 @@ namespace Common.Logging.Log4Net
             // parse config properties
             string configType = ArgUtils.GetValue(properties, "configType", string.Empty).ToUpper();
             string configFile = ArgUtils.GetValue(properties, "configFile", string.Empty);
+			foreach (var x in properties)
+			{
+				log4net.GlobalContext.Properties[x.Key] = x.Value;
+			}
 
             // app-relative path?
             if (configFile.StartsWith("~/") || configFile.StartsWith("~\\"))
             {
-                configFile = string.Format("{0}/{1}", AppDomain.CurrentDomain.BaseDirectory.TrimEnd('/', '\\'), configFile.Substring(2));
+
+#if NETCF
+                string path = Path.GetDirectoryName(typeof(Log4NetLoggerFactoryAdapter).Module.FullyQualifiedName).TrimEnd('/', '\\');                
+#else
+                string path = AppDomain.CurrentDomain.BaseDirectory.TrimEnd('/', '\\')
+#endif
+                configFile = string.Format("{0}/{1}", path, configFile.Substring(2));
+
             }
 
             if (configType == "FILE" || configType == "FILE-WATCH")

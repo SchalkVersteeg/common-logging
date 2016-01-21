@@ -123,9 +123,10 @@ namespace Common.Logging.Log4Net
             {
                 lock (this.GetType())
                 {
+					callerStackBoundaryType = typeof(AbstractLogger);
+					#if (!NETCF)
                     StackTrace stack = new StackTrace();
                     Type thisType = this.GetType();
-                    callerStackBoundaryType = typeof(AbstractLogger);
                     for (int i = 1; i < stack.FrameCount; i++)
                     {
                         if (!IsInTypeHierarchy(thisType, stack.GetFrame(i).GetMethod().DeclaringType))
@@ -134,6 +135,7 @@ namespace Common.Logging.Log4Net
                             break;
                         }
                     }
+#endif
                 }
             }
 
@@ -177,7 +179,11 @@ namespace Common.Logging.Log4Net
                 case LogLevel.Fatal:
                     return Level.Fatal;
                 default:
+#if (!NETCF)
                     throw new ArgumentOutOfRangeException("logLevel", logLevel, "unknown log level");
+#else
+					throw new ArgumentOutOfRangeException("logLevel", "unknown log level [value=" + logLevel.ToString() + "]");
+#endif
             }
         }
 
