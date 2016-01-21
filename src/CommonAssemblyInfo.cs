@@ -25,9 +25,11 @@ using System.Security.Permissions;
 #else
 // Note - if we decide to skip SL4+WP support and only Support SL5 then we should be able to specify AllowPartiallyTrustedCallersAttribute
 // even for Common.Logging.Core
+#if !NETCF
 [assembly: AllowPartiallyTrustedCallers()]
-[assembly: AssemblyConfigurationAttribute("net-4.5.win32; release")]
-[assembly: AssemblyInformationalVersionAttribute("3.3.1; net-4.5.win32; release")]
+#endif
+[assembly: AssemblyConfigurationAttribute("net-2.0.win32; release")]
+[assembly: AssemblyInformationalVersionAttribute("3.3.1; net-2.0.win32; release")]
 #endif
 
 [assembly: AssemblyCompanyAttribute("http://netcommon.sourceforge.net/")]

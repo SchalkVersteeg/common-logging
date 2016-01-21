@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 14.0.23107.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC54316A-A3B9-4EF5-A74C-1EC2344D0EA4}"
 	ProjectSection(SolutionItems) = preProject
@@ -49,6 +49,12 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Common.Logging.Core.Dnx", "src\Common.Logging.Core.Dnx\Common.Logging.Core.Dnx.xproj", "{B7A3507B-7346-4FCA-8B6F-9405E50A6BD4}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Common.Logging.Dnx", "src\Common.Logging.Dnx\Common.Logging.Dnx.xproj", "{62D1BD54-10D9-4F6A-BF5F-5447A55C987F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging.Core.2015-net45", "src\Common.Logging.Core\Common.Logging.Core.2015-net45.csproj", "{0D94BB87-EEB6-4F3D-9B9F-0A0F14394809}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging.Portable.2015-net45", "src\Common.Logging.Portable\Common.Logging.Portable.2015-net45.csproj", "{079CEC09-731A-4574-804F-3078377A4FF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging.2015-net45", "src\Common.Logging\Common.Logging.2015-net45.csproj", "{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,6 +126,18 @@ Global
 		{62D1BD54-10D9-4F6A-BF5F-5447A55C987F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62D1BD54-10D9-4F6A-BF5F-5447A55C987F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62D1BD54-10D9-4F6A-BF5F-5447A55C987F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D94BB87-EEB6-4F3D-9B9F-0A0F14394809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D94BB87-EEB6-4F3D-9B9F-0A0F14394809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D94BB87-EEB6-4F3D-9B9F-0A0F14394809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D94BB87-EEB6-4F3D-9B9F-0A0F14394809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079CEC09-731A-4574-804F-3078377A4FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079CEC09-731A-4574-804F-3078377A4FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079CEC09-731A-4574-804F-3078377A4FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079CEC09-731A-4574-804F-3078377A4FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -141,6 +159,9 @@ Global
 		{9202E384-BA52-4AE8-8D1A-9059E3BCA2EC} = {0B7980BF-D48E-4E66-B8C1-B10EBEB24AB3}
 		{B7A3507B-7346-4FCA-8B6F-9405E50A6BD4} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
 		{62D1BD54-10D9-4F6A-BF5F-5447A55C987F} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
+		{0D94BB87-EEB6-4F3D-9B9F-0A0F14394809} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
+		{079CEC09-731A-4574-804F-3078377A4FF5} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
+		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		NAntAddinLastFileName = Common.Logging.build

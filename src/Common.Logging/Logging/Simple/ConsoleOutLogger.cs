@@ -36,7 +36,7 @@ namespace Common.Logging.Simple
 #endif
     public class ConsoleOutLogger : Simple.AbstractSimpleLogger
     {
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !NETCF
         private static readonly Dictionary<LogLevel, ConsoleColor> colors = new Dictionary<LogLevel, ConsoleColor>
         {
             { LogLevel.Fatal, ConsoleColor.Red },
@@ -64,7 +64,7 @@ namespace Common.Logging.Simple
         {
         }
 
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !NETCF
         /// <summary>
         /// Creates and initializes a logger that writes messages to <see cref="Console.Out" />.
         /// </summary>
@@ -96,7 +96,7 @@ namespace Common.Logging.Simple
             FormatOutput(sb, level, message, e);
 
             // Print to the appropriate destination
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !NETCF
             ConsoleColor color;
             if (this.useColor && colors.TryGetValue(level, out color))
             {

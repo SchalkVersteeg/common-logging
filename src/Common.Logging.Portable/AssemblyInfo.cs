@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using Common.Logging;
 
 [assembly: System.Reflection.AssemblyProduct("Common Logging Framework")]
+#if !NETCF
 [assembly: System.Security.SecurityTransparent]
 
 [assembly: TypeForwardedTo(typeof(FormatMessageHandler))]
@@ -13,3 +14,4 @@ using Common.Logging;
 [assembly: TypeForwardedTo(typeof(ILogManager))]
 [assembly: TypeForwardedTo(typeof(IVariablesContext))]
 [assembly: TypeForwardedTo(typeof(LogLevel))]
+#endif

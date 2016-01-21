@@ -20,20 +20,43 @@
   <property name="tool.dir" value="${root.dir}/tools" />
   <property name="lib.dir" value="${root.dir}/lib" />
 
-  <if test="${project.sign and not(file::exists(root.dir + '/Common.Net.snk'))}">
-    <fail message="project.sign='true' but keyfile ${root.dir+'/Common.Net.snk'} is missing" />
+  <if test="${project.sign and not(file::exists(root.dir + '/InspectionOne.snk'))}">
+    <fail message="project.sign='true' but keyfile ${root.dir+'/InspectionOne.snk'} is missing" />
   </if>
 
-  <readregistry property="net40.install.dir" key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\InstallPath" hive="LocalMachine" failonerror="true" />
-  <property name="msbuild.exe" value="${net40.install.dir}\msbuild.exe" />
-
+  
+  <property name="msbuild.exe" value="C:\Windows\Microsoft.NET\Framework\v3.5\msbuild.exe" /> 
+  
 
 
   <target name="init" depends="clean, update-dependencies" />
 
   <target name="build" depends="init">
-
-    <!-- force net-2.0 -->
+    
+	<!-- force netcf-2.0 No Net cf 2.0 Support Yet-->
+<!--   <property name="nant.settings.currentframework" value="netcf-2.0"/>
+	  <property name="solution-file-filter" value="*.2008-netcf20.sln" />
+	  <property name="build.dir" value="${root.dir}/build/netcf20" />
+    <call target="build-all" />     -->
+	
+	<!-- force netcf-3.5 -->
+	 <if test="${framework::exists('netcf-3.5')}">
+      <property name="nant.settings.currentframework" value="netcf-3.5" />
+      <call target="display-target-framework" />
+	  <property name="solution-file-filter" value="*.2008-netcf35.sln" />
+	  <property name="build.dir" value="${root.dir}/build/netcf35" />
+    <call target="build-all" />
+    </if>
+	<if test="${not framework::exists('netcf-3.5')}">
+      <echo message=".NET Compact Framework 3.5 runtime is not available." />
+    </if>
+    <!--<if test="${framework::exists('netcf-3.5')}">-->
+	<!--</if>-->
+    
+  <readregistry property="net40.install.dir" key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\InstallPath" hive="LocalMachine" failonerror="true" />
+  <property name="msbuild.exe" value="${net40.install.dir}\msbuild.exe" />
+  
+	<!-- force net-2.0 -->
     <property name="nant.settings.currentframework" value="net-2.0"/>
 	  <property name="solution-file-filter" value="*.2010-net20.sln" />
 	  <property name="build.dir" value="${root.dir}/build/net20" />
@@ -462,7 +485,7 @@ ${tool.dir}       : dir for tools
     <AssemblyOriginatorKeyFile>Common.Net.snk</AssemblyOriginatorKeyFile>
 -->
       <arg value="${solutionfile}"/>
-      <arg line="/property:SignAssembly=${project.sign},AssemblyOriginatorKeyFile=${root.dir}/Common.Net.snk" />
+      <arg line="/property:SignAssembly=${project.sign},AssemblyOriginatorKeyFile=${root.dir}/InspectionOne.snk" />
       <arg line="/nologo" />
       <arg line="/verbosity:minimal" />
       <arg line="/property:Configuration=${solutionconfiguration}"/>
@@ -582,6 +605,24 @@ ${tool.dir}       : dir for tools
 		</do>
 	</foreach>
 </target>
+<target name="display-target-framework">
+    <echo message="" />
+    <echo message="----------------------------------------------------------" />
+    <echo message=" ${framework::get-description(framework::get-target-framework())}" />
+    <echo message="----------------------------------------------------------" />
+    <echo message="" />
+    <echo message="framework : ${framework::get-target-framework()}" />
+    <echo message="description : ${framework::get-description(framework::get-target-framework())}" />
+    <if test="${framework::sdk-exists(framework::get-target-framework())}">
+      <echo message="sdk directory : ${framework::get-sdk-directory(framework::get-target-framework())}" />
+    </if>
+    <if test="${not framework::sdk-exists(framework::get-target-framework())}">
+      <echo message="sdk directory : &lt;not configured/available&gt;" />
+    </if>
+    <echo message="framework directory : ${framework::get-framework-directory(framework::get-target-framework())}" />
+    <echo message="assembly directory : ${framework::get-assembly-directory(framework::get-target-framework())}" />
+    <echo message="" />
+  </target>
 
 
 

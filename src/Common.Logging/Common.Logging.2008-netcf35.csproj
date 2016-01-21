@@ -1,0 +1,195 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2FC4B79-213E-460B-831C-D391765A0BCF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common.Logging</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
+    <OSVersion>5.1</OSVersion>
+    <DeployDirSuffix>Common.Logging</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 5.0 Pocket PC SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\netcf35\Common.Logging\Debug\</OutputPath>
+    <DefineConstants>TRACE;NETCF;NETCF_2_0;NETCF_3_5;PocketPC</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1607</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\netcf35\Common.Logging\Release\</OutputPath>
+    <DefineConstants>TRACE;NETCF;NETCF_2_0;NETCF_3_5;PocketPC</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1607</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common.Logging.Portable\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\CoverageExcludeAttribute.cs">
+      <Link>CoverageExcludeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\ConfigurationException.cs">
+      <Link>Logging\ConfigurationException.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\ArgUtils.cs">
+      <Link>Logging\Configuration\ArgUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\DefaultConfigurationReader.cs">
+      <Link>Logging\Configuration\DefaultConfigurationReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\LogSetting.cs">
+      <Link>Logging\Configuration\LogSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\NameValueCollection.cs">
+      <Link>Logging\Configuration\NameValueCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\NameValueCollectionHelper.cs">
+      <Link>Logging\Configuration\NameValueCollectionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Factory\AbstractCachingLoggerFactoryAdapter.cs">
+      <Link>Logging\Factory\AbstractCachingLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Factory\AbstractLogger.cs">
+      <Link>Logging\Factory\AbstractLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\LogManager.cs">
+      <Link>Logging\LogManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\AbstractSimpleLogger.cs">
+      <Link>Logging\Simple\AbstractSimpleLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\AbstractSimpleLoggerFactoryAdapter.cs">
+      <Link>Logging\Simple\AbstractSimpleLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\CapturingLogger.cs">
+      <Link>Logging\Simple\CapturingLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\CapturingLoggerEvent.cs">
+      <Link>Logging\Simple\CapturingLoggerEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\CapturingLoggerFactoryAdapter.cs">
+      <Link>Logging\Simple\CapturingLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\DebugLogger.cs">
+      <Link>Logging\Simple\DebugLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\DebugLoggerFactoryAdapter.cs">
+      <Link>Logging\Simple\DebugLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\ExceptionFormatter.cs">
+      <Link>Logging\Simple\ExceptionFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\NoOpLogger.cs">
+      <Link>Logging\Simple\NoOpLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\NoOpLoggerFactoryAdapter.cs">
+      <Link>Logging\Simple\NoOpLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\NoOpVariablesContext.cs">
+      <Link>Logging\Simple\NoOpVariablesContext.cs</Link>
+    </Compile>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Logging\ConfigurationSectionHandler.cs" />
+    <Compile Include="Logging\Simple\ConsoleOutLogger.cs" />
+    <Compile Include="Logging\Simple\ConsoleOutLoggerFactoryAdapter.cs" />
+    <Compile Include="System.Linq.Expression\Expression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="System.Linq.Expression\NewExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Logging.Core\Common.Logging.Core.2008-netcf35.csproj">
+      <Project>{CADFB630-279F-427C-96A9-D2F9AA718648}</Project>
+      <Name>Common.Logging.Core.2008-netcf35</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Notes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

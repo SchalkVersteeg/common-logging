@@ -19,7 +19,7 @@
 #endregion
 
 using System;
-#if PORTABLE
+#if PORTABLE || NETCF
 #else
 using System.Runtime.Serialization;
 #endif
@@ -30,7 +30,7 @@ namespace Common.Logging
     /// The exception that is thrown when a configuration system error has occurred with Common.Logging
     /// </summary>
     /// <author>Mark Pollack</author>
-#if PORTABLE
+#if PORTABLE || NETCF
     public class ConfigurationException : Exception
 #else
     [Serializable]
@@ -69,7 +69,7 @@ namespace Common.Logging
         {
         }
 
-#if PORTABLE
+#if PORTABLE || NETCF
 #else
        /// <summary>
         /// Creates a new instance of the ConfigurationException class.

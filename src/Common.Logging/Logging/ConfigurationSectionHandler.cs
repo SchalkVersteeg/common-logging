@@ -18,6 +18,7 @@
 
 #endregion
 
+#if  !NETCF
 using System;
 using System.Collections;
 using System.Configuration;
@@ -229,3 +230,4 @@ namespace Common.Logging
         #endregion
     }
 }
+#endif

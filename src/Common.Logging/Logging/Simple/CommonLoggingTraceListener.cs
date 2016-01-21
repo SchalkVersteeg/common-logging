@@ -18,6 +18,7 @@
 
 #endregion
 
+#if  !NET35CF
 using System;
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -424,3 +425,4 @@ namespace Common.Logging.Simple
         }
     }
 }
+#endif

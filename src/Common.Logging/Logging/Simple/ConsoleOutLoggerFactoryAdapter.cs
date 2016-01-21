@@ -60,7 +60,7 @@ namespace Common.Logging.Simple
     /// <author>Erich Eichinger</author>
     public class ConsoleOutLoggerFactoryAdapter : Simple.AbstractSimpleLoggerFactoryAdapter
     {
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !NETCF
         private readonly bool useColor;
 
 #endif
@@ -88,7 +88,7 @@ namespace Common.Logging.Simple
             : base(properties)
         { }
 
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !NETCF
         /// <summary>
         /// Constructor for binary backwards compatibility with non-portableversions
         /// </summary>
@@ -107,7 +107,7 @@ namespace Common.Logging.Simple
             : base(level, showDateTime, showLogName, showLevel, dateTimeFormat)
         { }
 
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !NETCF 
         /// <summary>
         /// Initializes a new instance of the <see cref="AbstractSimpleLoggerFactoryAdapter"/> class with 
         /// default settings for the loggers created by this factory.
@@ -124,7 +124,7 @@ namespace Common.Logging.Simple
         /// </summary>
         protected override ILog CreateLogger(string name, LogLevel level, bool showLevel, bool showDateTime, bool showLogName, string dateTimeFormat)
         {
-#if !SILVERLIGHT
+#if !SILVERLIGHT && !NETCF
             ILog log = new ConsoleOutLogger(name, level, showLevel, showDateTime, showLogName, dateTimeFormat, this.useColor);
 #else
             ILog log = new ConsoleOutLogger(name, level, showLevel, showDateTime, showLogName, dateTimeFormat);

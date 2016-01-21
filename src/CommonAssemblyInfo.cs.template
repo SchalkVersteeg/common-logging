@@ -25,7 +25,9 @@ using System.Security.Permissions;
 #else
 // Note - if we decide to skip SL4+WP support and only Support SL5 then we should be able to specify AllowPartiallyTrustedCallersAttribute
 // even for Common.Logging.Core
+#if !NETCF
 [assembly: AllowPartiallyTrustedCallers()]
+#endif
 [assembly: AssemblyConfigurationAttribute("@ASSEMBLY_CONFIGURATION_ATTRIBUTE@")]
 [assembly: AssemblyInformationalVersionAttribute("@ASSEMBLY_INFORMATIONAL_VERSION_ATTRIBUTE@")]
 #endif
