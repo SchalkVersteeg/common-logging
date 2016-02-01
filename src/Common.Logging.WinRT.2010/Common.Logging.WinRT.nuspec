@@ -17,8 +17,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\build\portable\Common.Logging.WinRT\Release\Common.Logging.WinRT.dll" target="lib\portable-wpa81+win8+win81+uap10.0" />
-    <file src="..\..\build\portable\Common.Logging.WinRT\Release\Common.Logging.WinRT.pdb" target="lib\portable-wpa81+win8+win81+uap10.0" />
-    <file src="..\..\build\portable\Common.Logging.WinRT\Release\Common.Logging.WinRT.xml" target="lib\portable-wpa81+win8+win81+uap10.0" />
+    <file src="..\..\build\portable\Common.Logging.WinRT\Release\Common.Logging.WinRT.dll" target="lib\portable-wpa81+win8+win81+uap10.0+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="..\..\build\portable\Common.Logging.WinRT\Release\Common.Logging.WinRT.pdb" target="lib\portable-wpa81+win8+win81+uap10.0+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="..\..\build\portable\Common.Logging.WinRT\Release\Common.Logging.WinRT.xml" target="lib\portable-wpa81+win8+win81+uap10.0+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
   </files>
 </package>

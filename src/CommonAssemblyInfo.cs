@@ -28,8 +28,8 @@ using System.Security.Permissions;
 #if !NETCF
 [assembly: AllowPartiallyTrustedCallers()]
 #endif
-[assembly: AssemblyConfigurationAttribute("net-2.0.win32; release")]
-[assembly: AssemblyInformationalVersionAttribute("3.3.1; net-2.0.win32; release")]
+[assembly: AssemblyConfigurationAttribute("net-4.0.win32; release")]
+[assembly: AssemblyInformationalVersionAttribute("3.3.1; net-4.0.win32; release")]
 #endif
 
 [assembly: AssemblyCompanyAttribute("http://netcommon.sourceforge.net/")]

@@ -36,13 +36,6 @@
     <DocumentationFile>..\..\build\portable\Common.Logging.WinRT\Release\Common.Logging.WinRT.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\Common.Logging.Core\Common.Logging.Core.2010.csproj">
-      <Project>{7eeb2191-b3fc-4509-aa4b-a345c386eeed}</Project>
-      <Name>Common.Logging.Core.2010</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\Common.Logging.Portable\CoverageExcludeAttribute.cs">
       <Link>CoverageExcludeAttribute.cs</Link>
     </Compile>
@@ -114,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Logging.Core\Common.Logging.Core.2010-net45.csproj">
+      <Project>{0d94bb87-eeb6-4f3d-9b9f-0a0f14394809}</Project>
+      <Name>Common.Logging.Core.2010-net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

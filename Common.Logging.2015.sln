@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging.Portable.201
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging.2015-net45", "src\Common.Logging\Common.Logging.2015-net45.csproj", "{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging.Android", "src\Common.Logging\Common.Logging.Android.csproj", "{AE800B0F-8C91-4A7A-AE4B-36266AB4327D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -138,6 +140,10 @@ Global
 		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE800B0F-8C91-4A7A-AE4B-36266AB4327D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE800B0F-8C91-4A7A-AE4B-36266AB4327D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE800B0F-8C91-4A7A-AE4B-36266AB4327D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE800B0F-8C91-4A7A-AE4B-36266AB4327D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -162,6 +168,7 @@ Global
 		{0D94BB87-EEB6-4F3D-9B9F-0A0F14394809} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
 		{079CEC09-731A-4574-804F-3078377A4FF5} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
 		{6D1C3CEF-20B6-40DA-A862-935EA3F1C254} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
+		{AE800B0F-8C91-4A7A-AE4B-36266AB4327D} = {D26BC7B2-718C-4F97-AF36-4377E19ECE62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		NAntAddinLastFileName = Common.Logging.build

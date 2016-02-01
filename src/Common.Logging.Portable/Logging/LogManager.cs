@@ -237,14 +237,14 @@ namespace Common.Logging
 		}
 
 
-#if (PORTABLE || NETCF)&& !SILVERLIGHT && !NET20
+#if (PORTABLE || NETCF) && !SILVERLIGHT && !NET20
 
 		/// <summary>
 		/// Gets the logger by calling <see cref="ILoggerFactoryAdapter.GetLogger(Type)"/>
 		/// on the currently configured <see cref="Adapter"/> using the type of the calling class.
-
-#if !NETCF		
 		/// </summary>
+
+#if !NETCF
 		/// <remarks>
 		/// This method needs to inspect the <see cref="StackTrace"/> in order to determine the calling 
 		/// class. This of course comes with a performance penalty, thus you shouldn't call it too
@@ -334,7 +334,7 @@ namespace Common.Logging
 			throw new PlatformNotSupportedException(
 					"CreateGetClassNameFunction is not supported in this portable class library");
 #else
-			ConstructorInfo constructor =	stackFrameType.GetConstructor(new[] {typeof (int)});
+			ConstructorInfo constructor = stackFrameType.GetConstructor(new[] { typeof(int) });
 
 			var getMethodMethod = stackFrameType.GetMethod("GetMethod");
 
@@ -356,7 +356,7 @@ namespace Common.Logging
 			// but it is present on silverlight so we can just call it 
 			//var function = lambda.Compile();
 			var compileFunction = lambda.GetType().GetMethod("Compile", new Type[0]);
-			var function = (Func<MethodBase>) compileFunction.Invoke(lambda, null);
+			var function = (Func<MethodBase>)compileFunction.Invoke(lambda, null);
 
 			return function;
 #endif

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE800B0F-8C91-4A7A-AE4B-36266AB4327D}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common.Logging</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\Android\Common.Logging\Release\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NET_4_0;NET_4_5;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1607</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>1607</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\Android\Common.Logging\Release\</OutputPath>
+    <DefineConstants>TRACE;NET_4_0;NET_4_5;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common.Logging.Portable\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\CoverageExcludeAttribute.cs">
+      <Link>CoverageExcludeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\ConfigurationException.cs">
+      <Link>Logging\ConfigurationException.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\ArgUtils.cs">
+      <Link>Logging\Configuration\ArgUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\DefaultConfigurationReader.cs">
+      <Link>Logging\Configuration\DefaultConfigurationReader.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\LogSetting.cs">
+      <Link>Logging\Configuration\LogSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\NameValueCollection.cs">
+      <Link>Logging\Configuration\NameValueCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Configuration\NameValueCollectionHelper.cs">
+      <Link>Logging\Configuration\NameValueCollectionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Factory\AbstractCachingLoggerFactoryAdapter.cs">
+      <Link>Logging\Factory\AbstractCachingLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Factory\AbstractLogger.cs">
+      <Link>Logging\Factory\AbstractLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\LogManager.cs">
+      <Link>Logging\LogManager.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\AbstractSimpleLogger.cs">
+      <Link>Logging\Simple\AbstractSimpleLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\AbstractSimpleLoggerFactoryAdapter.cs">
+      <Link>Logging\Simple\AbstractSimpleLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\CapturingLogger.cs">
+      <Link>Logging\Simple\CapturingLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\CapturingLoggerEvent.cs">
+      <Link>Logging\Simple\CapturingLoggerEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\CapturingLoggerFactoryAdapter.cs">
+      <Link>Logging\Simple\CapturingLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\DebugLogger.cs">
+      <Link>Logging\Simple\DebugLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\DebugLoggerFactoryAdapter.cs">
+      <Link>Logging\Simple\DebugLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\ExceptionFormatter.cs">
+      <Link>Logging\Simple\ExceptionFormatter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\NoOpLogger.cs">
+      <Link>Logging\Simple\NoOpLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\NoOpLoggerFactoryAdapter.cs">
+      <Link>Logging\Simple\NoOpLoggerFactoryAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\Common.Logging.Portable\Logging\Simple\NoOpVariablesContext.cs">
+      <Link>Logging\Simple\NoOpVariablesContext.cs</Link>
+    </Compile>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Logging\Simple\CommonLoggingTraceListener.cs" />
+    <Compile Include="Logging\ConfigurationSectionHandler.cs" />
+    <Compile Include="Logging\Simple\ConsoleOutLogger.cs" />
+    <Compile Include="Logging\Simple\ConsoleOutLoggerFactoryAdapter.cs" />
+    <Compile Include="Logging\Simple\TraceLogger.cs" />
+    <Compile Include="Logging\Simple\TraceLoggerFactoryAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Logging.Core\Common.Logging.Core.2015-net45.csproj">
+      <Project>{7eeb2191-b3fc-4509-aa4b-a345c386eeed}</Project>
+      <Name>Common.Logging.Core.2015</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

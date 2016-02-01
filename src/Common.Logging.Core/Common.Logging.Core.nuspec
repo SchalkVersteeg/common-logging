@@ -13,9 +13,15 @@
     <language>en-US</language>
   </metadata>
   <files>
-    <file src="..\..\build\portable\Common.Logging.Core\Release\Common.Logging.Core.dll" target="lib\portable-win+net40+sl40+wp7" />
-    <file src="..\..\build\portable\Common.Logging.Core\Release\Common.Logging.Core.pdb" target="lib\portable-win+net40+sl40+wp7" />
-    <file src="..\..\build\portable\Common.Logging.Core\Release\Common.Logging.Core.xml" target="lib\portable-win+net40+sl40+wp7" />
+    <file src="..\..\build\net45\portable\Common.Logging.Core\Release\Common.Logging.Core.dll" target="lib\portable-win+net45+wp80+win81+wpa81+uap10.0+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="..\..\build\net45\portable\Common.Logging.Core\Release\Common.Logging.Core.pdb" target="lib\portable-win+net45+wp80+win81+wpa81+uap10.0+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="..\..\build\net45\portable\Common.Logging.Core\Release\Common.Logging.Core.xml" target="lib\portable-win+net45+wp80+win81+wpa81+uap10.0+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="..\..\build\net45\portable\Common.Logging.Core\Release\Common.Logging.Core.dll" target="lib\net45" />
+    <file src="..\..\build\net45\portable\Common.Logging.Core\Release\Common.Logging.Core.pdb" target="lib\net45" />
+    <file src="..\..\build\net45\portable\Common.Logging.Portable\Release\Common.Logging.Core.xml" target="lib\net45" />
+    <file src="..\..\build\portable\Common.Logging.Core\Release\Common.Logging.Core.dll" target="lib\portable-win+net40+sl40+wp7+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="..\..\build\portable\Common.Logging.Core\Release\Common.Logging.Core.pdb" target="lib\portable-win+net40+sl40+wp7+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
+    <file src="..\..\build\portable\Common.Logging.Core\Release\Common.Logging.Core.xml" target="lib\portable-win+net40+sl40+wp7+MonoAndroid10+MonoTouch10+Xamarin.iOS10" />
     <file src="..\..\build\portable\Common.Logging.Core\Release\Common.Logging.Core.dll" target="lib\net40" />
     <file src="..\..\build\portable\Common.Logging.Core\Release\Common.Logging.Core.pdb" target="lib\net40" />
     <file src="..\..\build\portable\Common.Logging.Portable\Release\Common.Logging.Core.xml" target="lib\net40" />

@@ -26,95 +26,95 @@ using System.Text;
 
 namespace Common.Logging.Simple
 {
-    /// <summary>
-    /// Sends log messages to <see cref="Console.Out" />.
-    /// </summary>
-    /// <author>Gilles Bayon</author>
+	/// <summary>
+	/// Sends log messages to <see cref="Console.Out" />.
+	/// </summary>
+	/// <author>Gilles Bayon</author>
 #if PORTABLE
 #else
-    [Serializable]
+	[Serializable]
 #endif
-    public class ConsoleOutLogger : Simple.AbstractSimpleLogger
-    {
+	public class ConsoleOutLogger : Simple.AbstractSimpleLogger
+	{
 #if !SILVERLIGHT && !NETCF
-        private static readonly Dictionary<LogLevel, ConsoleColor> colors = new Dictionary<LogLevel, ConsoleColor>
-        {
-            { LogLevel.Fatal, ConsoleColor.Red },
-            { LogLevel.Error, ConsoleColor.Yellow },
-            { LogLevel.Warn, ConsoleColor.Magenta },
-            { LogLevel.Info, ConsoleColor.White },
-            { LogLevel.Debug, ConsoleColor.Gray },
-            { LogLevel.Trace, ConsoleColor.DarkGray },
-        };
+		private static readonly Dictionary<LogLevel, ConsoleColor> colors = new Dictionary<LogLevel, ConsoleColor>
+				{
+						{ LogLevel.Fatal, ConsoleColor.Red },
+						{ LogLevel.Error, ConsoleColor.Yellow },
+						{ LogLevel.Warn, ConsoleColor.Magenta },
+						{ LogLevel.Info, ConsoleColor.White },
+						{ LogLevel.Debug, ConsoleColor.Gray },
+						{ LogLevel.Trace, ConsoleColor.DarkGray },
+				};
 
-        private readonly bool useColor;
+		private readonly bool useColor;
 
 #endif
-        /// <summary>
-        /// Creates and initializes a logger that writes messages to <see cref="Console.Out" />.
-        /// </summary>
-        /// <param name="logName">The name, usually type name of the calling class, of the logger.</param>
-        /// <param name="logLevel">The current logging threshold. Messages recieved that are beneath this threshold will not be logged.</param>
-        /// <param name="showLevel">Include the current log level in the log message.</param>
-        /// <param name="showDateTime">Include the current time in the log message.</param>
-        /// <param name="showLogName">Include the instance name in the log message.</param>
-        /// <param name="dateTimeFormat">The date and time format to use in the log message.</param>
-        public ConsoleOutLogger(string logName, LogLevel logLevel, bool showLevel, bool showDateTime, bool showLogName, string dateTimeFormat)
-            : base(logName, logLevel, showLevel, showDateTime, showLogName, dateTimeFormat)
-        {
-        }
+		/// <summary>
+		/// Creates and initializes a logger that writes messages to <see cref="Console.Out" />.
+		/// </summary>
+		/// <param name="logName">The name, usually type name of the calling class, of the logger.</param>
+		/// <param name="logLevel">The current logging threshold. Messages recieved that are beneath this threshold will not be logged.</param>
+		/// <param name="showLevel">Include the current log level in the log message.</param>
+		/// <param name="showDateTime">Include the current time in the log message.</param>
+		/// <param name="showLogName">Include the instance name in the log message.</param>
+		/// <param name="dateTimeFormat">The date and time format to use in the log message.</param>
+		public ConsoleOutLogger(string logName, LogLevel logLevel, bool showLevel, bool showDateTime, bool showLogName, string dateTimeFormat)
+				: base(logName, logLevel, showLevel, showDateTime, showLogName, dateTimeFormat)
+		{
+		}
 
 #if !SILVERLIGHT && !NETCF
-        /// <summary>
-        /// Creates and initializes a logger that writes messages to <see cref="Console.Out" />.
-        /// </summary>
-        /// <param name="logName">The name, usually type name of the calling class, of the logger.</param>
-        /// <param name="logLevel">The current logging threshold. Messages recieved that are beneath this threshold will not be logged.</param>
-        /// <param name="showLevel">Include the current log level in the log message.</param>
-        /// <param name="showDateTime">Include the current time in the log message.</param>
-        /// <param name="showLogName">Include the instance name in the log message.</param>
-        /// <param name="dateTimeFormat">The date and time format to use in the log message.</param>
-        /// <param name="useColor">Use color when writing the log message.</param>
-        public ConsoleOutLogger(string logName, LogLevel logLevel, bool showLevel, bool showDateTime, bool showLogName, string dateTimeFormat, bool useColor)
-            : this(logName, logLevel, showLevel, showDateTime, showLogName, dateTimeFormat)
-        {
-            this.useColor = useColor;
-        }
+		/// <summary>
+		/// Creates and initializes a logger that writes messages to <see cref="Console.Out" />.
+		/// </summary>
+		/// <param name="logName">The name, usually type name of the calling class, of the logger.</param>
+		/// <param name="logLevel">The current logging threshold. Messages recieved that are beneath this threshold will not be logged.</param>
+		/// <param name="showLevel">Include the current log level in the log message.</param>
+		/// <param name="showDateTime">Include the current time in the log message.</param>
+		/// <param name="showLogName">Include the instance name in the log message.</param>
+		/// <param name="dateTimeFormat">The date and time format to use in the log message.</param>
+		/// <param name="useColor">Use color when writing the log message.</param>
+		public ConsoleOutLogger(string logName, LogLevel logLevel, bool showLevel, bool showDateTime, bool showLogName, string dateTimeFormat, bool useColor)
+				: this(logName, logLevel, showLevel, showDateTime, showLogName, dateTimeFormat)
+		{
+			this.useColor = useColor;
+		}
 
 #endif
-        /// <summary>
-        /// Do the actual logging by constructing the log message using a <see cref="StringBuilder" /> then
-        /// sending the output to <see cref="Console.Out" />.
-        /// </summary>
-        /// <param name="level">The <see cref="LogLevel" /> of the message.</param>
-        /// <param name="message">The log message.</param>
-        /// <param name="e">An optional <see cref="Exception" /> associated with the message.</param>
-        protected override void WriteInternal(LogLevel level, object message, Exception e)
-        {
-            // Use a StringBuilder for better performance
-            StringBuilder sb = new StringBuilder();
-            FormatOutput(sb, level, message, e);
+		/// <summary>
+		/// Do the actual logging by constructing the log message using a <see cref="StringBuilder" /> then
+		/// sending the output to <see cref="Console.Out" />.
+		/// </summary>
+		/// <param name="level">The <see cref="LogLevel" /> of the message.</param>
+		/// <param name="message">The log message.</param>
+		/// <param name="e">An optional <see cref="Exception" /> associated with the message.</param>
+		protected override void WriteInternal(LogLevel level, object message, Exception e)
+		{
+			// Use a StringBuilder for better performance
+			StringBuilder sb = new StringBuilder();
+			FormatOutput(sb, level, message, e);
 
-            // Print to the appropriate destination
-#if !SILVERLIGHT && !NETCF
-            ConsoleColor color;
-            if (this.useColor && colors.TryGetValue(level, out color))
-            {
-                var originalColor = Console.ForegroundColor;
-                try
-                {
-                    Console.ForegroundColor = color;
-                    Console.Out.WriteLine(sb.ToString());
-                    return;
-                }
-                finally
-                {
-                    Console.ForegroundColor = originalColor;
-                }
-            }
+			// Print to the appropriate destination
+#if !SILVERLIGHT && !NETCF && !ANDROID
+			ConsoleColor color;
+						if (this.useColor && colors.TryGetValue(level, out color))
+						{
+								var originalColor = Console.ForegroundColor;
+								try
+								{
+										Console.ForegroundColor = color;
+										Console.Out.WriteLine(sb.ToString());
+										return;
+								}
+								finally
+								{
+										Console.ForegroundColor = originalColor;
+								}
+						}
 
 #endif
-            Console.Out.WriteLine(sb.ToString());
-        }
-    }
+			Console.Out.WriteLine(sb.ToString());
+		}
+	}
 }
